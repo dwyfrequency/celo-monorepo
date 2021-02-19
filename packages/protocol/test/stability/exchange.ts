@@ -138,7 +138,7 @@ contract('Exchange', (accounts: string[]) => {
 
     await fundReserve()
 
-    exchange = await Exchange.new(isTest)
+    exchange = await Exchange.new()
     await exchange.initialize(
       registry.address,
       stableToken.address,

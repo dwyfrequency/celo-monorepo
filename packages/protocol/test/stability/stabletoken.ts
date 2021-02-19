@@ -38,8 +38,8 @@ contract('StableToken', (accounts: string[]) => {
   const SECONDS_IN_A_WEEK = 60 * 60 * 24 * 7
 
   beforeEach(async () => {
-    registry = await Registry.new(isTest)
-    freezer = await Freezer.new(isTest)
+    registry = await Registry.new()
+    freezer = await Freezer.new()
     await registry.setAddressFor(CeloContractName.Freezer, freezer.address)
     stableToken = await StableToken.new(isTest)
     const response = await stableToken.initialize(
