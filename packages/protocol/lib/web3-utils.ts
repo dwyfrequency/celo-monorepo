@@ -393,7 +393,7 @@ export function getFunctionSelectorsForContract(contract: any, contractName: str
 }
 
 export function checkInheritance(baseContractName: string, derivativeContractArtifact: any) {
-  return derivativeContractArtifact.ast.nodes.contains(
+  return derivativeContractArtifact.ast.nodes.includes(
     (astNode: any) => astNode.type === 'ImportDirective' && (astNode.file as string).endsWith(baseContractName + '.sol')
   )
 }
